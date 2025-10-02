@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Para Mabel 💖</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      font-family: "Georgia", serif;
+      color: #fff;
+      overflow: hidden;
+    }
+    .poema {
+      max-width: 700px;
+      padding: 20px 30px;
+      background: rgba(0, 0, 0, 0.35);
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      animation: fadeIn 3s ease;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 1.3em;
+      line-height: 1.6;
+      margin: 10px 0;
+    }
+    .firma {
+      margin-top: 25px;
+      font-style: italic;
+      font-size: 1.1em;
+      color: #ffd6e0;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(50px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    .corazon {
+      position: absolute;
+      bottom: -20px;
+      color: rgba(255,255,255,0.7);
+      font-size: 20px;
+      animation: subir 8s linear infinite;
+    }
+    @keyframes subir {
+      from { transform: translateY(0) rotate(0deg); opacity: 1;}
+      to { transform: translateY(-110vh) rotate(360deg); opacity: 0;}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="poema">
+    <h1>Para Mabel 💖</h1>
+    <p>Mabel, eres la luz que me guía,</p>
+    <p>la llama que nunca se apaga.</p>
+    <p>En cada silencio, escucho tu nombre,</p>
+    <p>en cada latido, siento tu abrazo.</p>
+    <p>Te amaré cuando el tiempo se detenga,</p>
+    <p>cuando el mar se quede sin olas,</p>
+    <p>cuando el cielo olvide a las estrellas...</p>
+    <p>Aun entonces, seguirás siendo mi eternidad.</p>
+    <div class="firma">— Con todo mi amor, Yusuf</div>
+  </div>
+  
+
+  <script>
+    function crearCorazon() {
+      const corazon = document.createElement("div");
+      corazon.classList.add("corazon");
+      corazon.innerHTML = "❤";
+      corazon.style.left = Math.random() * window.innerWidth + "px";
+      corazon.style.fontSize = (Math.random() * 20 + 15) + "px";
+      document.body.appendChild(corazon);
+      setTimeout(() => corazon.remove(), 8000);
+    }
+    setInterval(crearCorazon, 500);
+  </script>
+
+</body>
+</html>
